@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<title>DragStart Example</title>
+
+<p id=example draggable=true>Drag me!</p>
+
+<script>
+  function dragStarted(e) {
+    console.log("started");
+    // do something else useful...
+  }
+  const example = document.querySelector('#example');
+  example.addEventListener("dragstart", dragStarted);
+</script>

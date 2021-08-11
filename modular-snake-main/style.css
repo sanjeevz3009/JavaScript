@@ -1,0 +1,64 @@
+:root {
+  --bg: white;
+  --snake: green;
+  --food: purple;
+  --gameover: #F00;
+  --border: black;
+  --grid: #CCC;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: black;
+    --snake: limegreen;
+    --food: #660066;
+    --gameover: #D00;
+    --border: white;
+    --grid: #222;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+  background: var(--bg);
+}
+
+.game {
+  width: 90vmin;
+  height: 90vmin;
+  border: solid thin var(--border);
+}
+
+#game div {
+  transition: border 1s ease;
+  border: solid thin transparent;
+}
+
+#game.gridon div {
+  border-color: var(--grid);
+}
+
+#game {
+  display: grid;
+  grid-template-columns: repeat(25, 1fr);
+  grid-template-rows: repeat(25, 1fr);
+}
+
+.snake {
+  background: var(--snake);
+}
+
+.gameover .snake {
+  background: var(--gameover);
+}
+
+.food {
+  background: var(--food);
+}

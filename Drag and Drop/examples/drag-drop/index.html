@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<title>Drag & Drop Example</title>
+
+<style>
+  #dragme,
+  #drophere {
+    width: 5em;
+    border: red solid thin;
+    margin: 1em;
+    padding: 2em;
+    text-align: center;
+    border-radius: 0.5em;
+    background: white;
+  }
+</style>
+
+<script>
+  function dragStartHandler(e) {
+    const data = Date.now();
+    e.dataTransfer.setData("text/plain", data);
+  }
+
+  function dragOverHandler(e) {
+    e.preventDefault();
+  }
+
+  function dropHandler(e) {
+    const data = e.dataTransfer.getData("text/plain");
+    const difference = `Dragged for ${Date.now() - data}ms`;
+    document.querySelector("#fbk").textContent = difference;
+  }
+
+  function prep() {
+    const drophere = document.querySelector("#drophere");
+    const dragme = document.querySelector("#dragme");
+
+    dragme.addEventListener("dragstart", dragStartHandler);
+    drophere.addEventListener("dragover", dragOverHandler);
+    drophere.addEventListener("drop", dropHandler);
+  }
+
+  window.addEventListener('load', prep);
+</script>
+
+<div id=dragme draggable=true>Dragme!</div>
+<div id=drophere>drop here</div>
+<p id=fbk></p>

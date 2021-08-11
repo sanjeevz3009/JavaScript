@@ -1,0 +1,24 @@
+{
+  "name": "ws_drag",
+  "version": "1.0.0",
+  "description": "An exposition of drag and drop events.",
+  "main": "index.html",
+  "author": "SoftEng <softeng@port.ac.uk>",
+  "contributors": [
+    "Rich Boakes <rjb@boakes.org>",
+    "Jacek Kopecky <jacek@jacek.cz>",
+    "Matt Dennis <m@matt.qa>"
+  ],
+  "eslintConfig": {
+    "extends": "portsoc",
+    "root": true,
+    "env": {
+      "browser": true
+    }
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^7.17.0",
+    "eslint-config-portsoc": "^0.8.1"
+  }
+}

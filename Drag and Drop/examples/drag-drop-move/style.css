@@ -1,0 +1,40 @@
+body {
+  margin: 0;
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  font-family: sans-serif;
+}
+
+.dropzone h1 {
+  text-align: center;
+}
+
+.dropzone {
+  width: 50%;
+  border: red solid thin;
+  border-radius: 1rem;
+  margin: 0;
+  margin: 1rem;
+}
+
+.dropzone2 {
+  width: 50%;
+  border: red solid thin;
+  border-radius: 1rem;
+  margin: 0;
+  margin: 1rem;
+}
+
+div[draggable] {
+  display: inline-block;
+  width: 8vw;
+  background: grey;
+  color: white;
+  margin: 1vw;
+  padding: 2em;
+  text-align: center;
+  border-radius: 0.5em;
+}

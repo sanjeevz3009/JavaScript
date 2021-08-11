@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<title>DragOver & Drop Example</title>
+
+<style>
+  #drophere {
+    width: 100vw;
+    height: 40vh;
+    border: solid green thick;
+  }
+
+  img {
+      height: 4rem;
+  }
+</style>
+
+<script>
+
+  function dragStartHandler(e) {
+    console.log("start!");
+  }
+
+  function dragOverHandler(e) {
+    e.preventDefault();
+  }
+
+  function dropHandler(e) {
+    console.log("drop!");
+  }
+
+  function prep() {
+    const drophere = document.querySelector("#drophere");
+    const dragme = document.querySelector("#dragme");
+
+    drophere.addEventListener("dragover", dragOverHandler);
+    drophere.addEventListener("drop", dropHandler);
+    dragme.addEventListener("dragstart", dragStartHandler);
+  }
+
+window.addEventListener('load', prep);
+</script>
+
+<p>This is a normal paragraph, it can't be dragged.</p>
+<p><a href=http://example.org>This is a URL for dragging (because unlike normal text URLs are draggable by default).<a></p>
+<p>On the desktop images can normally be dragged too (because people like to copy images by dragging them) so whilst this paragraph is not draggable, this image <em>is</em> <img src=logo.svg alt="A uni logo for dragging."></p>
+<p>This image also has the draggable attribute set. <img draggable=true src=logo.svg alt="A uni logo for dragging."></p>
+<p draggable=true id=example>Drag me!  This paragraph can be dragged because its <code>draggable</code> attribute is <code>true</code>.</p>
+<p draggable=true id=dragme>Drag me!  This paragraph goes a step further an the dragstart event is responded to.</p>
+
+<h1>DropZone<h1>
+<div id=drophere>Drop Here</div>

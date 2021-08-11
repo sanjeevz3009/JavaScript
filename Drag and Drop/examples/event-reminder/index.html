@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<title>Hello Event World</title>
+
+<p id=example>Hello Event World</p>
+
+<script>
+  function shout(e) {
+ 	  console.log(e.target.textContent);
+  }
+  const example = document.querySelector('#example');
+  example.addEventListener("click", shout);
+</script>
